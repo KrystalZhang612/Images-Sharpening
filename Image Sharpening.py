@@ -16,8 +16,6 @@ import math
 import imageio 
 
 
-
-
 #supplemental functions 
 
 
@@ -70,8 +68,6 @@ def ConvolutionFunction(OriginalImage, Kernel):
 	width = KernelWidth // 2
 	
 	
-	
-	
 	#initialize a new array of given shape and type, filled with zeros from padded image 
 	
 	ConvolvedImage = np.zeros(PaddedImage.shape)
@@ -120,8 +116,6 @@ def ConvolutionFunction(OriginalImage, Kernel):
 	return ConvolvedImage[height: HeightEndPoint,  width: WidthEndPoint]
 
 
-
-
 #2D Gaussian filter implementation 
 
 def Filter(sigma):
@@ -158,9 +152,6 @@ def Filter(sigma):
 			
 	return GaussianFilter
 
-
-
-
 	
 #implement the first derivative horizontally of the given sigma value 
 
@@ -182,8 +173,6 @@ def FirstDerivativeX(sigma):
 			GaussianFilter[x+m, y+n] = y
 			
 	return GaussianFilter
-
-
 
 #implement the first derivative vertically of the given sigma value 
 
@@ -229,16 +218,13 @@ def SharpenImage(image, sigma, alpha):
 
 
 
-
-
 #Driver/Testing code:
 
-#Required test: Sharpen ”Yosemite.png” with a sigma of 1.0 and alpha of 5.0 and save as ”4.png”.
+#Sharpen ”Yosemite.png” with a sigma of 1.0 and alpha of 5.0 and save as ”4.png”.
 
 
-a = SharpenImage('hw1_data/Yosemite.png', 1.0, 5.0)
+a = SharpenImage('Yosemite.png', 1.0, 5.0)
 
 plt.imshow(a)
 
 plt.imsave('4.png', a)
-
